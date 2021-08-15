@@ -1,5 +1,10 @@
 
 import React, { Component } from 'react';
+import './css/style.css';
+
+
+
+
 
 export default class App extends Component {
   constructor() {
@@ -16,8 +21,7 @@ export default class App extends Component {
 
 
   // grab values from input and make into state onChange
-  //we are using onChange instead of with back-end name attributes
-  //onChange meas when the value changes from its original on submission...
+
   updateState(key, value) {
     // update react state
     this.setState({
@@ -66,18 +70,20 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          Add item
+        <div className='container'>
+          <h2>To Do List</h2>
           <br />
-          <input type='text' placholder='Add item here' value={this.state.newItem} onChange={e => this.updateState('newItem', e.target.value)} />
-          <button onClick={() => this.addItem()} >Add</button>
+          <form class="form">
+            <input type='text' placholder='Add item here' value={this.state.newItem} onChange={e => this.updateState('newItem', e.target.value)} />
+            <button className='addBtn' type='button' onClick={() => this.addItem()} >+</button>
+          </form>
           <br />
           <ul>
             {this.state.list.map(item => {
               return (
                 <li key={item.id}>
                   {item.value}
-                  <button onClick={() => this.deleteItem(item.id)}>X</button>
+                  <button onClick={() => this.deleteItem(item.id)}>✔</button>
                 </li>
               )
             })}
