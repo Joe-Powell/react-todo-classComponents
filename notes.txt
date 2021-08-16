@@ -1,0 +1,36 @@
+
+<<<<  git is inside todo-list folder not the root >>>>
+
+
+
+
+__________  forEach() vs map()  ______________________________________________________________________________________________________
+<<<< !long story short, we can't use the return keyword return with forEach in it, and map does  >>>>                                
+                                                                                                                                     
+    .map() returns new array of modified elements and forEach just                                                                    
+     iterates through array and doesn't return anything.
+        we can use forEach to put the items inside an array then outside the forEach return that array somewhere like in a function
+          Thats why we use map in return jsx with state not foreach.
+            we can use forEach or map with mongoose because we are not rendering, just putting in another array or string.
+
+
+   
+    [1,2,3].map((n)=> n); => returns [1,2,3]
+
+
+
+
+   [1,2,3].forEach((n)=> n); => returns undefined 
+    so with forEach we can iterate through an array and push it 
+      into another array or string then return that array...
+        let list_two = [1, 2, 3, 4, 5, 6];
+        let itemsForEached = [];
+        list_two.forEach(num => itemsForEached.push(num * 0))
+        log(itemsForEached)//  [0, 0, 0, 0, 0, 0]
+
+
+ _____________________________________________________________________________________________________________________
+
+
+
+

@@ -29,7 +29,7 @@ export default class App extends Component {
     })
   }
 
-
+  // ok
 
   deleteItem(id) {
     // current list of items
