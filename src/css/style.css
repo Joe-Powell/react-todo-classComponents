@@ -93,6 +93,7 @@ p button {
         width: 90vw;
        padding-left: 10px;
        margin: auto;
+       word-break: break-word;  /* display the overflow on a new line*/
   
     }
 

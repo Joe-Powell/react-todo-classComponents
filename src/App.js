@@ -36,7 +36,7 @@ export default class App extends Component {
     const list = [...this.state.list];
 
     //filter out item being deleted
-    const updatedList = list.filter(item => item.id != id);
+    const updatedList = list.filter(item => item.id !== id);
 
     this.setState({ list: updatedList });
 
@@ -68,12 +68,15 @@ export default class App extends Component {
 
 
   render() {
+
+    console.log(typeof this.state.list)
+
     return (
 
       <div className='container'>
         <h2>To Do List</h2>
         <br />
-        <form class="form">
+        <form className="form">
           <input type='text' placholder='Add item here' value={this.state.newItem} onChange={e => this.updateState('newItem', e.target.value)} />
           <button className='addBtn' type='button' onClick={() => this.addItem()} >+</button>
         </form>
@@ -86,12 +89,18 @@ export default class App extends Component {
                 <button onClick={() => this.deleteItem(item.id)}>✔</button>
               </p>
             )
-          })}
+          })
+          }
         </div>
       </div>
 
     )
+
+
   }
+
+
+
 }
 
 
